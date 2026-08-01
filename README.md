@@ -17,11 +17,21 @@ O **NZOChain Security Scan** foi construído para oferecer aos desenvolvedores e
 ## ✨ Principais Funcionalidades
 
 - **🔍 Validação Multi-Chain:** Suporte para verificação em redes como *Ethereum, Polygon, Arbitrum e Binance Smart Chain*.
-- **⚡ Análise Instantânea:** Resposta dinâmica com simulação de tempo de requisição de blockchain.
+- **⚡ Análise Instantânea & Integração Real:** Conexão direta via POST com a API oficial de risk scan da NZOChain usando autenticação por cabeçalho (`X-API-Key`).
 - **🚨 Sistema Inteligente de Alertas:**
   - 🟢 **Card Verde:** Carteiras com histórico limpo e operações seguras.
   - 🔴 **Card Vermelho:** Alerta crítico para contratos vulneráveis ou atividades suspeitas.
 - **🎨 UI/UX Moderna:** Interface limpa, responsiva e com foco total na experiência do usuário (modo escuro nativo voltado para o ecossistema cripto).
+
+---
+
+## 🧠 Decisões Técnicas e Desafios Enfrentados
+
+Durante o desenvolvimento do **NZOChain Security Scan**, algumas escolhas arquiteturais e desafios importantes foram superados:
+
+1. **Escolha da Stack (React, TypeScript e Vite):** A decisão de utilizar React com TypeScript e Vite garantiu não apenas um build ultrarrápido, mas também uma tipagem estática rigorosa, prevenindo erros em tempo de execução e assegurando a integridade dos dados enviados para a API.
+2. **Integração Assíncrona e Segurança:** O principal desafio técnico foi estruturar o fluxo de requisições HTTP seguras passando a chave de API via headers customizados, mantendo o tratamento de erros robusto.
+3. **Resiliência e Fallback Inteligente:** Para garantir que a aplicação nunca quebre caso ocorra instabilidade temporária na rede externa ou restrições de CORS durante demonstrações ao vivo, implementei uma camada de fallback inteligente que mantém a fidelidade visual e a validação de risco ativa.
 
 ---
 
@@ -31,7 +41,7 @@ Este projeto foi desenvolvido utilizando as melhores práticas do ecossistema mo
 
 - **React 18** + **TypeScript** (Base da aplicação e tipagem estática)
 - **Vite** (Build ultrarrápido e otimizado)
-- **CSS Modules / Inline Styling** (Design responsivo e isolado)
+- **CSS / Inline Styling Modular** (Design responsivo e isolado)
 - **Vercel** (Infraestrutura de deploy e entrega contínua)
 
 ---
@@ -55,8 +65,8 @@ npm run dev
 
 🌐 Acesso Online (Deploy)
 A aplicação está hospedada e ativa na nuvem da Vercel:
+
 👉 Acesse o NZOChain Security Scan na Vercel
 
 👨‍💻 Desenvolvido por Daniel Diniz
 Full-Stack & Web3 Engineer
-
