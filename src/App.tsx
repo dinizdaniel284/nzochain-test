@@ -2,8 +2,8 @@ import { useState } from 'react';
 import './App.css';
 
 export default function App() {
-  // Configurando os estados iniciais da aplicação (chave, input da carteira, rede, resultado e loading)
-  const [apiKey, setApiKey] = useState('pk_live_8851bed0653ba13f1d08c5182dd0c50a141080be717c27aa');
+  // Configurando os estados iniciais da aplicação (chave vazia por segurança)
+  const [apiKey, setApiKey] = useState('');
   const [address, setAddress] = useState('');
   const [network, setNetwork] = useState('Ethereum');
   const [result, setResult] = useState<{ status: 'safe' | 'risk'; message: string } | null>(null);
@@ -145,7 +145,7 @@ export default function App() {
           </button>
         </form>
 
-        {/* Renderização condicional do Card de Resultado (Verde para seguro ou Vermelho para risco crítico) */}
+        {/* Renderização condicional do Card de Resultado */}
         {result && (
           <div style={{ 
             marginTop: '25px', 
